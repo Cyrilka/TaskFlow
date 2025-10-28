@@ -9,7 +9,7 @@ const STATUS_COLORS = {
 const ASSIGNEES = ['Alice', 'Bob', 'Charlie', 'David'];
 
 export default function App() {
-  const STORAGE_KEY = 'taskflow_full_v1';
+  const STORAGE_KEY = 'taskflow_full_v2';
   const [dark, setDark] = useState(() => JSON.parse(localStorage.getItem('taskflow_theme') || 'false'));
   const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
   const [filter, setFilter] = useState({ status: 'all', assignee: 'all' });
@@ -101,6 +101,8 @@ export default function App() {
   );
 }
 
+// --------------------------- Components ---------------------------
+
 function Filters({ filter, setFilter, search, setSearch, sort, setSort }) {
   return (
     <div className="flex flex-wrap gap-3 mb-4 items-center">
@@ -171,4 +173,10 @@ function TaskItem({ task, onEdit, onDelete, onToggle }) {
         <span className="text-xs text-gray-400">{task.assignee}</span>
         {task.dueDate && <span className="text-xs text-gray-400">Due: {task.dueDate}</span>}
       </div>
-      <div
+      <div className="flex gap-1 mt-1 md:mt-0">
+        <button onClick={onEdit} className="px-2 py-1 border rounded text-xs">Edit</button>
+        <button onClick={onDelete} className="px-2 py-1 border rounded text-xs">Delete</button>
+      </div>
+    </div>
+  );
+}
