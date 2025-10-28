@@ -1,14 +1,9 @@
-# TaskFlow
-Учебный проект — таск-трекер.
+# TaskFlow Full
+Полностью функциональный TaskFlow SPA — учебный проект с модернизацией.
 
-**Контекст:** проект выполнен в рамках курса *Проектирование программных систем* во время обучения (MSc, 2021).
-**Обновление:** 2025 — модернизация интерфейса и UX с использованием React + TailwindCSS.
+**Features:** Add/Edit/Delete tasks, Status, Search/Filter, Dark/Light theme.
 
 ## Запуск локально
 1. Установить Node.js v16+
 2. npm install
 3. npm run dev
-
-## Фичи
-- SPA React
-- Тёмная / Светлая тема
